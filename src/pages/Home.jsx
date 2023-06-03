@@ -3,6 +3,7 @@ import Masonry from "react-masonry-css"
 
 import CardPhoto from "../components/CardPhoto"
 import { getData } from "../utils/getData"
+import Carousel from "../components/Carousel"
 
 const breakpointObj = {
   default: 5,
@@ -34,6 +35,7 @@ function Home() {
 
   return (
     <>
+      <Carousel />
       <section
         id="spotlight"
         className="container mx-auto py-10 md:py-16 px-[2%] md:px-0 xl:px-[2%]"
