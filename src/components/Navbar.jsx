@@ -1,7 +1,7 @@
-import { NavLink } from "react-router-dom"
+import { NavLink, useLocation } from "react-router-dom"
 
 function Navbar() {
-  // const { pathname, hash } = useLocation()
+  const { pathname, hash } = useLocation()
 
   const handleActive = (isActive) => {
     const active = "text-purple-300 font-semibold"
@@ -11,7 +11,7 @@ function Navbar() {
   }
 
   return (
-    <header className="bg-slate-950 sticky top-0 border-b-2 border-b-purple-500">
+    <header className="bg-slate-950 sticky top-0 border-b-2 border-b-purple-500 z-50">
       <div className="container mx-auto py-2 md:py-4 md:px-[2%] flex justify-center md:justify-between">
         <h1 className="text-xl font-semibold text-white hidden md:block">
           Photo <span className="text-purple-300 font-bold">Collection</span>
@@ -20,11 +20,22 @@ function Navbar() {
           <NavLink to="/" className={({ isActive }) => handleActive(isActive)}>
             Home
           </NavLink>
-          {/* {pathname === "/" && (
-            <a href="#screen" className={handleActive(hash == "#screen")}>
-              screen
-            </a>
-          )} */}
+          {pathname === "/" && (
+            <>
+              <a
+                href="#spotlight"
+                className={handleActive(hash === "#spotlight")}
+              >
+                Spotlight
+              </a>
+              <a
+                href="#collection"
+                className={handleActive(hash === "#collection")}
+              >
+                Collection
+              </a>
+            </>
+          )}
           <NavLink
             to="/gallery"
             className={({ isActive }) => handleActive(isActive)}
