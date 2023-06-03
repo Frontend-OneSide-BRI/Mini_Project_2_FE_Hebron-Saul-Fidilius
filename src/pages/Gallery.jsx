@@ -43,19 +43,20 @@ function Gallery() {
       )
     })
 
+    setCategory("")
     setFilter(newData)
   }
 
   return (
     <div className="container mx-auto">
-      <nav className="rounded-full bg-slate-950 mt-10 flex justify-evenly items-center">
-        <ul className="flex justify-center items-center px-[2%] gap-8">
+      <nav className=" bg-slate-950 mt-10 flex justify-evenly items-center flex-col lg:flex-row md:rounded-full py-2">
+        <ul className="flex justify-center items-center px-[2%] gap-8 w-full md:w-auto flex-col md:flex-row">
           {categories.map((d, i) => (
             <li
               className={
                 category === d
-                  ? "p-3 font-semibold cursor-pointer border-2 border-purple-600 bg-slate-300 text-purple-800"
-                  : "p-3 text-purple-300 font-semibold cursor-pointer border-2 border-transparent hover:bg-slate-300 hover:text-purple-800 hover:border-purple-600"
+                  ? "w-full md:w-auto p-3 font-semibold cursor-pointer border-2 border-purple-600 bg-slate-300 text-purple-800"
+                  : "w-full md:w-auto p-3 text-purple-300 font-semibold cursor-pointer border-2 border-transparent hover:bg-slate-300 hover:text-purple-800 hover:border-purple-600"
               }
               onClick={() => filterByCategory(d)}
               key={i}
@@ -66,7 +67,7 @@ function Gallery() {
         </ul>
         <input
           type="text"
-          className="border-none outline-none py-2 px-4 rounded-full bg-violet-100 text-purple-800 font-semibold"
+          className="border-none outline-none py-2 px-4 rounded-full bg-violet-100 text-purple-800 font-semibold w-2/3 lg:w-auto mt-2 lg:mt-0"
           value={keyword}
           onChange={(e) => setKeyword(e.target.value)}
           onKeyUp={filterByKeyword}
