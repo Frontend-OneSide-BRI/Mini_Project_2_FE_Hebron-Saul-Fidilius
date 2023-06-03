@@ -21,7 +21,7 @@ function Navbar() {
             Home
           </NavLink>
           {pathname === "/" && (
-            <>
+            <div className="hidden sm:flex gap-8 md:gap-6">
               <a
                 href="#spotlight"
                 className={handleActive(hash === "#spotlight")}
@@ -34,7 +34,7 @@ function Navbar() {
               >
                 Collection
               </a>
-            </>
+            </div>
           )}
           <NavLink
             to="/gallery"

@@ -37,17 +37,17 @@ function Carousel() {
   }
 
   return (
-    <div className="h-80 border-y-4 border-purple-300">
+    <div className="h-60 md:h-80 border-y-4 border-purple-300">
       <div className="relative h-full">
         <div
           className="w-full h-full bg-no-repeat bg-cover bg-center bg-fixed"
           style={{ backgroundImage: `url(${data[currentSlide].img})` }}
         />
-        <div className="absolute left-1/2 -translate-x-1/2 bottom-4 bg-[#00000044] rounded-md py-4 px-8">
-          <h5 className="text-purple-200 text-2xl font-bold">
+        <div className="absolute hidden sm:block left-1/2 -translate-x-1/2 bottom-4 bg-[#00000044] rounded-md py-4 px-8">
+          <h5 className="text-purple-200 text-lg lg:text-2xl font-semibold lg:font-bold">
             {data[currentSlide].caption}
           </h5>
-          <p className="text-purple-200 text-lg italic">
+          <p className="text-purple-200 text-sm lg:text-lg italic">
             {data[currentSlide].paragraph}
           </p>
         </div>
