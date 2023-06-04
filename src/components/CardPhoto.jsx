@@ -15,7 +15,7 @@ function CardPhoto({ data, imgSpotlight, containerSpotlight }) {
   return (
     <div
       onClick={viewDetail}
-      className={"w-full " + (containerSpotlight && containerSpotlight)}
+      className={"w-full " + (containerSpotlight ? containerSpotlight : "")}
     >
       <div className="mb-4 relative group w-full overflow-hidden cursor-pointer">
         <img
@@ -23,7 +23,7 @@ function CardPhoto({ data, imgSpotlight, containerSpotlight }) {
           alt={data.title}
           className={
             "group-hover:scale-125 duration-300 " +
-            (imgSpotlight && imgSpotlight)
+            (imgSpotlight ? imgSpotlight : "")
           }
         />
         <div className="hidden group-hover:flex absolute inset-0 p-[5%] bg-photoItem flex-col justify-end ">

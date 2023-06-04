@@ -2,8 +2,8 @@ import { useState, useEffect } from "react"
 import Masonry from "react-masonry-css"
 
 import CardPhoto from "../components/CardPhoto"
-import { getData } from "../utils/getData"
 import Carousel from "../components/Carousel"
+import { getData } from "../utils/getData"
 
 const breakpointObj = {
   default: 5,
@@ -38,7 +38,7 @@ function Home() {
       <Carousel />
       <section
         id="spotlight"
-        className="container mx-auto py-10 md:py-16 px-[2%] md:px-0 xl:px-[2%]"
+        className="container mx-auto py-10 md:py-16 px-[2%] md:px-0 xl:px-[2%] border-b-2 border-slate-200"
       >
         <h2 className="text-2xl font-semibold mb-4">Spotlight</h2>
         <div className="grid place-items-center gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
